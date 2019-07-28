@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+@import './app/variables.less';
+
+html, body {
+  .mobile({
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+  })
+}
+
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: @font-text;
+
+  font-weight: @regular;
+  font-size: @d-font-s;
+
+  color: @text-color;
+  background-color: @background-color;
+
+  .mobile({
+    font-size: @m-font-s;
+  })
+}
+
+a {
+  color: @highlight-color;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-decoration: none;
+
+  font-family: @font-highlight;
+
+  &.active {
+    color: @primary-color;
+  }
+
+  &.link {
+    text-transform: none;
+    color: @primary-color;
+    font-weight: @regular;
+  }
+}
+
+.exposed-text {
+  color: @primary-color;
+  font-size: @d-font-xl;
+  white-space: nowrap;
+  font-weight: bold;
+  line-height: 1;
+
+  font-family: @font-highlight;
+
+  .subtitle {
+    font-size: @d-font-s;
+    color: @text-color;
+    margin-top: @m-space-s;
+  }
+
+  .mobile({
+    font-size: @m-font-l;
+    left: 0;
+    height: @m-space-xxl + @m-exposed-height;
+    padding-top: @m-space-xxl;
+  })
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mobile {
+  .desktop({
+    display: none !important;
+  });
+
+  .mobile({
+    display: block;
+  });
+}
+
+.desktop {
+  .desktop({
+    display: block;
+  });
+
+  .mobile({
+    display: none !important;
+  })
+}

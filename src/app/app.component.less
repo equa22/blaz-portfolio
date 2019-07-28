@@ -1,0 +1,15 @@
+@import './variables.less';
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  .mobile({
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: calc(100vh -  @m-space-l);
+    width: calc(100% - 2 * @m-space-l);
+    padding: 0 @m-space-l;
+  })
+}

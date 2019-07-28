@@ -1,0 +1,58 @@
+@import '../../variables.less';
+
+.container {
+  width: @container;
+  margin-left: auto;
+  margin-right: auto;
+
+  .mobile({
+    width: auto;
+    height: auto;
+    display: block;
+    padding-bottom: @m-space-l;
+
+    margin-bottom: @m-space-xl;
+  })
+}
+
+.contact {
+  &.left {
+    margin-left: @main-padding;
+
+    .mobile({
+      margin-left: 0;
+    })
+  }
+
+  &.right {
+    margin-right: @main-padding;
+    align-self: flex-end;
+
+    .mobile({
+      margin-right: 0;
+    })
+  }
+
+  div {
+    font-size: @d-font-l;
+    color: @primary-color;
+    font-weight: @black;
+
+    .mobile({
+      font-size: @m-font-s;
+      margin-bottom: @m-space-s;
+    })
+  }
+}
+
+a, span {
+  font-weight: @regular;
+  padding-left: @main-padding;
+  text-transform: none;
+
+  .mobile({
+    padding-left: 0;
+    margin-bottom: @m-space-l;
+    display: block;
+  })
+}

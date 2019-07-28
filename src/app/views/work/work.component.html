@@ -1,0 +1,20 @@
+<app-menu></app-menu>
+<!-- desktop exposed -->
+<div class="exposed-text desktop" [appParallax]="parallax">blarge - blush - blaze - blach - blar - bla?</div>
+
+<!-- mobile exposed -->
+<div class="exposed-text mobile">
+    {{ animatedText }}
+    <div class="subtitle">Creative // Amsterdam</div>
+</div>
+<div (mousewheel)="test($event)">
+  <div class="scrollable" (scroll)="onScroll($event)"[appParallax]="scrollEl" #container>
+      <div class="space-holder desktop">Creative<br>Amsterdam</div>
+      <div class="teaser" routerLink="/project/{{ project.id }}" *ngFor="let project of projects">
+          <img [src]="project.image"/>
+          <div class="title">{{ project.title }}</div>
+          <div class="brand">{{ project.brand }}</div>
+        </div>    
+      <div class="space-holder"></div>
+  </div>
+</div>

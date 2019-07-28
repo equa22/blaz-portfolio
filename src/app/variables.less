@@ -1,0 +1,61 @@
+@import 'https://use.typekit.net/xht0upg.css';
+
+// sizes and spacings
+@main-padding: 10%;
+@first-el: 20%;
+
+@primary-color: #ff0505;
+@text-color: #000000;
+@background-color: #ffffff;
+@highlight-color: #000000;
+
+// font weights
+@bold: 700;
+@black: 900;
+@regular: 300;
+
+@font-text: titling-gothic-fb-wide, sans-serif;
+@font-highlight: titling-gothic-fb-extended, sans-serif;
+
+@container: 990px;
+
+// mobile spaces
+@m-space-s: 8px;
+@m-space-m: 16px;
+@m-space-l: 25px;
+@m-space-xl: 50px;
+@m-space-xxl: 175px;
+
+// mobile font
+@m-font-s: 10px;
+@m-font-m: 20px;
+@m-font-l: 40px;
+
+// desktop spaces
+@d-space-xs: 12px;
+@d-space-s: 16px;
+@d-space-m: 24px;
+@d-space-l: 38px;
+@d-space-xl: 42px;
+@d-space-xxl: 48px;
+@d-space-xxxl: 96px;
+
+// desktop font
+@d-font-s: 12px;
+@d-font-m: 24px;
+@d-font-l: 84px;
+@d-font-xl: 144px;
+
+// responsive
+@mobile: 1024px;
+
+// height of mobile exposed text
+@m-exposed-height: 40px;
+
+.mobile(@rules) {
+  @media screen and (max-width: @mobile) { @rules(); }
+}
+
+.desktop(@rules) {
+  @media screen and (min-width: @mobile+1) { @rules(); }
+}

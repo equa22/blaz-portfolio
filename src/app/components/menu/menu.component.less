@@ -1,0 +1,132 @@
+@import '../../variables.less';
+
+@icon: 16px;
+
+
+.mobile({
+  :host {
+    margin-top: @m-space-l;
+    display: block;
+  }
+});
+
+.top {
+  top: @d-space-xl;
+  bottom: auto;
+}
+
+.bottom {
+  bottom: @d-space-xl;
+  top: auto;
+}
+
+.left {
+  left: @d-space-xl;
+  right: auto;
+}
+
+.right {
+  right: @d-space-xl;
+  left: auto;
+}
+
+.item {
+  position: fixed;
+  z-index: 10;
+
+  .mobile({
+    position: relative;
+    display: block;
+    left: 0;
+    top: 0;
+    margin-bottom: @m-space-m;
+
+    &.subpage {
+      display: none;
+    }
+  })
+}
+
+
+.social {
+  display: flex;
+
+  a {
+    width: @icon;
+    height: @icon;
+    display: block;
+    margin-left: 8px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &.linkedin {
+      background-image: url('../../../assets/icons/b_linked.png');
+
+      &:hover {
+        background-image: url('../../../assets/icons/_b_linkedin.png');
+      }
+    }
+
+    &.instagram {
+      background-image: url('../../../assets/icons/b_instagram.png');
+
+      &:hover {
+        background-image: url('../../../assets/icons/_b_instagram.png');
+      }
+    }
+
+    &.mail {
+      background-image: url('../../../assets/icons/b_mail.png');
+
+      &:hover {
+        background-image: url('../../../assets/icons/_b_mail.png');
+      }
+    }
+
+    &.twitter {
+      background-image: url('../../../assets/icons/b_twitter.png');
+
+      &:hover {
+        background-image: url('../../../assets/icons/_b_twitter.jpg');
+      }
+    }
+  }
+
+  .mobile({
+    display: none;
+  })
+} 
+
+.back {
+  height: 100%;
+  text-align: center;
+  position: fixed;
+
+  left: @d-space-xl;
+  top: 0;
+
+  pointer-events: none;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+
+  a {
+    pointer-events: all;
+    color: @primary-color;
+  }
+
+  .mobile({
+    text-orientation: unset;
+    writing-mode: unset;
+    transform: rotate(0);
+    left: 0;
+    display: block;
+    position: relative;
+    height: auto;
+    width: auto;
+    text-align: left;
+    padding: 0 @m-space-l @m-space-l @m-space-l;
+    line-height: 1;
+  })
+}

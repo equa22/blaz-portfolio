@@ -5,6 +5,13 @@
 /tmp
 /out-tsc
 
+# videos and images
+/src/assets/images
+/src/assets/S-PARK
+/src/assets/SPEEDMOJI
+/src/assets/VELORETTI
+/src/assets/videos
+
 # dependencies
 /node_modules
 

@@ -1,0 +1,156 @@
+@import '../../variables.less';
+
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .mobile({
+    display: block;
+  })
+}
+
+.scrollable {
+  display: flex;
+  padding-left: @main-padding;
+
+  width: fit-content;
+
+  //width: 100%;
+
+  //overflow: scroll;
+  scroll-behavior: smooth;
+
+  position: relative;
+  z-index: 2;
+
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  .mobile({
+    padding: 0;
+    flex-direction: column;
+    margin-bottom: @m-space-xl;
+
+    left: 0 !important;
+  })
+}
+
+.space-holder, .links {
+  padding: 0 15% 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.space-holder {
+  font-weight: @bold;
+  font-size: @d-font-m;
+  min-width: 25vw;
+  padding: @d-space-xxxl 0 0 @d-space-xxl;
+  display: flex;
+  flex-direction: column;
+
+  .mobile({
+    font-size: @m-font-s;
+    padding: 0;
+  })
+}
+
+.links {
+  justify-content: center;
+}
+
+.exposed-text {
+  position: relative;
+  left: @main-padding;
+  margin-bottom: -40px;
+  z-index: 1;
+
+  .mobile({
+    margin-bottom: 0;
+    left: 0 !important;
+  })
+}
+
+
+.teaser {
+  margin-right: 10vw;
+  font-weight: @bold;
+
+  .mobile({
+    margin-right: 0;
+    margin-bottom: @m-space-l;
+  });
+
+  img {
+    width: 45vw;
+    height: 25vw;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+    .mobile({
+      width: 100%;
+      height: 200px;
+    })
+  }
+
+  .title {
+    margin: @d-space-m 0 @d-space-xs;
+
+    .mobile({
+      margin: @m-space-m 0 @m-space-s 0;
+    })
+  }
+
+  .brand {
+    color: @primary-color;
+  }
+}
+
+
+.fake-scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  overflow: scroll;
+
+  .content {
+    height: 1000%;
+    width: 1000%;
+    pointer-events: none;
+  }
+}
+
+@img-height: 25vw;
+@img-width: 45vw;
+@placeholder-width: 25vw;
+@title-height: 52px;
+@item-margin: 10vw;
+@num-of-items: 8;
+
+.rotate-container {
+  height: calc(@num-of-items * ( @img-width + @item-margin ) + @placeholder-width);
+  width: calc(@img-height + @title-height);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  transform:rotate(-90deg) translateY(-100px);
+  transform-origin: right top;
+
+  flex-direction: column;
+  display: block;
+}
+
+.rotate-el {
+
+  transform: rotate(90deg);
+  transform-origin: right top;
+}

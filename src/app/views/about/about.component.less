@@ -1,0 +1,92 @@
+@import '../../variables.less';
+
+:host {
+  display: block;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mobile({
+    display: block;
+    padding: 0;
+    height: auto;
+    overflow: unset;
+    padding-bottom: @m-space-l;
+  })
+}
+
+.about {
+  max-width: @container;
+
+  .mobile({
+    max-width: 100%;
+    margin-top: 0;
+
+    margin-bottom: @m-space-xl;
+  })
+}
+
+.row {
+  display: flex;
+  margin-top: @main-padding;
+
+  .mobile({
+    display: block;
+    margin-top: 0;
+  })
+}
+
+.title {
+  width: @first-el;
+  font-weight: @black;
+
+  div {
+    font-size: @d-font-m;
+  }
+}
+.text {
+  flex-grow: 1;
+  padding-right: @d-space-xxl;
+
+  .mobile({
+    margin-bottom: @d-space-l;
+  })
+}
+
+.exposed-text {
+  font-size: @d-font-l;
+  text-align: center;
+
+  span {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 100px;
+    line-height: @d-font-l;;
+  }
+
+  .mobile({
+    text-align: left;
+    font-size: @m-font-l;
+
+    span {
+      font-size: 50px;
+      line-height: @m-font-l;
+    }
+  })
+}
+
+.experiences {
+  color: @primary-color;
+  
+  .desktop({
+    white-space: nowrap;
+
+    padding-top: 30px;
+  });
+
+  .bold {
+    font-weight: @bold;
+  }
+}

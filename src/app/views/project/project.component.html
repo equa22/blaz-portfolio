@@ -1,0 +1,48 @@
+<app-menu [backLink]="backLink"></app-menu>
+
+<div class="exposed-text">{{ project.brand }}</div>
+<div class="project">
+  <!-- Cover image -->
+  <img [src]="project.image" class="thumbnail">
+
+  <div class="wrapper">
+    
+    <!-- Title and description -->
+    <div class="main-row">
+      <div class="title">
+        <div>{{ project.title }}</div>
+        <p>{{ project.brand }}</p>
+      </div>
+      <div class="description">
+        <p *ngFor="let desc of project.description" [innerHTML]="desc.text"></p>
+      </div>
+    </div>
+    <!-- Media -->
+    <div class="media">
+      
+      <div class="item" [class.withDesc]="item.description" *ngFor="let item of project.items">
+        <div class="title" *ngIf="item.title">{{ item.title }}</div>
+        <div class="description" *ngIf="item.description">
+          <p *ngFor="let desc of item.description">{{ desc.text }}</p>
+        </div>
+        <img [src]="item.path" *ngIf="item.type === mediaType.Image">
+        <iframe 
+          *ngIf="item.type === mediaType.YouTube"
+          [src]="safeUrl(item.youtubeId)" 
+          frameborder="0" 
+          width="560" 
+          height="315"
+          allowfullscreen>
+        </iframe>
+        <video *ngIf="item.type === mediaType.Video" controls>
+            <source [src]="item.path" type="video/mp4">
+            <source [src]="item.path" type="video/ogg">
+        Your browser does not support the video tag.
+        </video>
+        <p *ngIf="item.type === mediaType.Text" [innerHTML]="item.text" class="text"></p>
+      </div>
+    </div>
+
+    <a class="back mobile" routerLink="/">Back to work</a>
+  </div>
+</div>

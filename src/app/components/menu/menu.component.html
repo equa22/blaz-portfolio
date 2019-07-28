@@ -1,0 +1,13 @@
+<a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" class="top left item" *ngIf="!backLink" [class.subpage]="backLink">Work</a>
+<a routerLink="/about" routerLinkActive="active" class="bottom left item" [class.subpage]="backLink">About</a>
+<div class="social top right item" [class.subpage]="backLink">
+  <a target="_blank" href="https://twitter.com/blazve" class="twitter"></a>
+  <a target="_blank" href="https://www.linkedin.com/in/blazverhnjak/" class="linkedin"></a>
+  <a target="_blank" href="https://www.instagram.com/blazve/" class="instagram"></a>
+  <a target="_blank" href="mailto:blaz.verhnjak@gmail.com" class="mail"></a>
+</div>
+<a routerLink="/contact" routerLinkActive="active" class="bottom right item" [class.subpage]="backLink">Contact</a>
+
+<div class="back" *ngIf="backLink">
+  <a routerLink="/">{{ backLink.title }}</a>
+</div>
